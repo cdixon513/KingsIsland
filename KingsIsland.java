@@ -13,7 +13,7 @@ public class KingsIsland
 	{
 		//Declare variables for the number of people, parking cost, food cost, total cost, cost per person
 		int numOfPeople;
-		float parkingCost, foodCost, totalCost, costPerPerson;
+		double parkingCost, foodCost, totalCost, costPerPerson;
 
 		//Prompt for and read in the number of people in the group
 		Scanner reader = new Scanner(System.in);
@@ -23,16 +23,17 @@ public class KingsIsland
 
 		//Prompt for and read in the cost of parking
 		System.out.println("Enter the cost of parking: ");
-		parkingCost = reader.nextFloat();
+		parkingCost = reader.nextDouble();
 
 
 		//Prompt for and read in the amount spent on food
 		System.out.println("Enter the cost of food: ");
-		foodCost = reader.nextFloat();
+		foodCost = reader.nextDouble();
 		reader.close();
 
 		//Calculate the total expenses
-		totalCost = parkingCost + foodCost;
+		double ticketCost = 32.99 * numOfPeople;
+		totalCost = parkingCost + foodCost + ticketCost;
 
 		//Calculate the average per person
 		costPerPerson = totalCost / numOfPeople;
